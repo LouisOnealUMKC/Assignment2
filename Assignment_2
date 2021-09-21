@@ -1,0 +1,50 @@
+print('Welcome to LAB GRADE CALCULATOR')
+
+StudentName = input("Who are we calculating grades for? ==>")
+
+LabsWeight = 0.7
+ExamsWeight = 0.2
+AttendanceWeight = 0.1
+
+LabGrade = int(input("Enter Lab Grade"))
+if(LabGrade > 100):
+    LabGrade = 100
+    print('Lab Grade was over 100. Lab Grade has been changed to 100.')
+if(LabGrade < 0):
+    LabGrade = 0
+    print('Lab Grade was under 0. Lab Grade has been changed to 0.')
+
+ExamGrade = int(input("Enter Exam Grade"))
+if(ExamGrade > 100):
+    ExamGrade = 100
+    print('Exam Grade was over 100. Exam Grade has been changed to 100.')
+if(ExamGrade < 0):
+    ExamGrade = 0
+    print('Exam Grade was under 0. Exam Grade has been changed to 0.')
+
+AttendanceGrade = int(input("Enter Attendance Grade"))
+if(AttendanceGrade > 100):
+    AttendanceGrade = 100
+    print('Attendance Grade was over 100. Attendance Grade has been changed to 100.')
+if(AttendanceGrade < 0):
+    AttendanceGrade = 0
+    print('Attendance Grade was under 0. Attendance Grade has been changed to 0.')
+
+WeightedGrade = (LabGrade * LabsWeight) + (ExamGrade * ExamsWeight) + (AttendanceGrade * AttendanceWeight)
+
+LetterGrade = ''
+if(WeightedGrade >= 90):
+     LetterGrade = 'A'
+elif (WeightedGrade >= 80):
+    LetterGrade = 'B'
+elif (WeightedGrade >= 70):
+    LetterGrade = 'C'
+elif (WeightedGrade >= 60):
+    LetterGrade = 'D'
+elif (WeightedGrade < 60):
+    LetterGrade = 'F'
+
+print('\nThe weighted grade for {} is {}'.format(StudentName,WeightedGrade))
+print('{} has a letter grade of {}'.format(StudentName,LetterGrade))
+
+print('\nThanks for using the LAB GRADE CALCULATOR')
